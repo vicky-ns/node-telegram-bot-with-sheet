@@ -30,7 +30,7 @@ const doc = new GoogleSpreadsheet(RESPONSES_SHEET_ID);
 // Credentials for the service account
 const CREDENTIALS = JSON.parse(fs.readFileSync('sample.json'));
 
-const TOKEN = "5793784616:AAGiTgoOcv0JVhEOELYh7oPDViDH3xaI_B0";
+const TOKEN = process.env.VOW_TOKEN;
 const port = process.env.PORT || 8080;
 
 const bot = new telegramBot(TOKEN, { polling: true });
@@ -401,5 +401,5 @@ app.get("/", (req, res) => {
     res.send("T server running ")
 });
 
-console.log(`BOT TOEKN: ${TOKEN}`)
+// console.log(`BOT TOEKN: ${TOKEN}`)
 
